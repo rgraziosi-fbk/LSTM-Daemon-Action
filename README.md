@@ -8,11 +8,12 @@ Datasets can be found in the log folder or on the following link:
 - [Logs](logs)
 
 # Reproduce Results:
+
 * To execute this code you need to install anaconda in your system, and create an environment using environment.yml specification provided in the repository.
   ```
   cd GenerativeLSTM
   conda env create -f environment.yml
-  conda activate deep_generator
+  conda activate lstm-caise23
   ```
 ## Running the script
 
@@ -42,5 +43,4 @@ Once created the environment, you can perform each one of the tasks, specifying 
 ```
 
 
-## Pretrained model:
-Pretrained models can be found in trained model folder or at the following link.
+
