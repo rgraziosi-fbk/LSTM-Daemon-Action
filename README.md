@@ -29,6 +29,8 @@ Once created the environment, you can perform training and testing by specifying
 ```
 (lstm_env) C:\sc_lstm>python dg_training.py -f BPI_Challenge_2012.csv -m lstm -e 1 -o bayesian
 ```
+* For training purposes, event log should exist in the input folder
+
 
 *Predictive task:* It is possible to predict case suffix.  To perform this task, you need to set the activity (-a) as ‘pred_sfx’ for case suffix and remaining time prediction. Additionally, it's required to indicate the folder where the predictive model is located (-c), and the name of the .h5 model (-b). Finally, you need to specify the method for selecting the next predicted task (-v) ‘random_choice’ or ‘arg_max’ or ` and the number of repetitions of the experiment (-r).
 
