@@ -1,0 +1,251 @@
+Reading log traces ...      [DONE]
+Analysing resource pool 20.0%...      Analysing resource pool 40.0%...      Analysing resource pool 60.0%...      Analysing resource pool 80.0%...      Analysing resource pool 100.0%...      [DONE]
+Model: "model"
+__________________________________________________________________________________________________
+ Layer (type)                Output Shape                 Param #   Connected to                  
+==================================================================================================
+ activity (InputLayer)       [(None, 1)]                  0         []                            
+                                                                                                  
+ role (InputLayer)           [(None, 1)]                  0         []                            
+                                                                                                  
+ activity_embedding (Embedd  (None, 1, 4)                 44        ['activity[0][0]']            
+ ing)                                                                                             
+                                                                                                  
+ role_embedding (Embedding)  (None, 1, 4)                 36        ['role[0][0]']                
+                                                                                                  
+ dot_product (Dot)           (None, 1, 1)                 0         ['activity_embedding[0][0]',  
+                                                                     'role_embedding[0][0]']      
+                                                                                                  
+ reshape (Reshape)           (None, 1)                    0         ['dot_product[0][0]']         
+                                                                                                  
+==================================================================================================
+Total params: 80 (320.00 Byte)
+Trainable params: 80 (320.00 Byte)
+Non-trainable params: 0 (0.00 Byte)
+__________________________________________________________________________________________________
+/gpfs/space/home/muhamm93/caise23/lstm_caise23_concatenated/model_training/embedding_training.py:67: UserWarning: `Model.fit_generator` is deprecated and will be removed in a future version. Please use `Model.fit`, which supports generators.
+  model.fit_generator(gen, epochs=100,
+Epoch 1/100
+13/13 - 1s - loss: 0.4093 - 706ms/epoch - 54ms/step
+Epoch 2/100
+13/13 - 0s - loss: 0.1418 - 165ms/epoch - 13ms/step
+Epoch 3/100
+13/13 - 0s - loss: 0.0576 - 167ms/epoch - 13ms/step
+Epoch 4/100
+13/13 - 0s - loss: 0.0357 - 166ms/epoch - 13ms/step
+Epoch 5/100
+13/13 - 0s - loss: 0.0280 - 165ms/epoch - 13ms/step
+Epoch 6/100
+13/13 - 0s - loss: 0.0213 - 168ms/epoch - 13ms/step
+Epoch 7/100
+13/13 - 0s - loss: 0.0152 - 166ms/epoch - 13ms/step
+Epoch 8/100
+13/13 - 0s - loss: 0.0104 - 166ms/epoch - 13ms/step
+Epoch 9/100
+13/13 - 0s - loss: 0.0069 - 164ms/epoch - 13ms/step
+Epoch 10/100
+13/13 - 0s - loss: 0.0047 - 165ms/epoch - 13ms/step
+Epoch 11/100
+13/13 - 0s - loss: 0.0035 - 166ms/epoch - 13ms/step
+Epoch 12/100
+13/13 - 0s - loss: 0.0028 - 168ms/epoch - 13ms/step
+Epoch 13/100
+13/13 - 0s - loss: 0.0023 - 172ms/epoch - 13ms/step
+Epoch 14/100
+13/13 - 0s - loss: 0.0021 - 166ms/epoch - 13ms/step
+Epoch 15/100
+13/13 - 0s - loss: 0.0018 - 162ms/epoch - 12ms/step
+Epoch 16/100
+13/13 - 0s - loss: 0.0016 - 172ms/epoch - 13ms/step
+Epoch 17/100
+13/13 - 0s - loss: 0.0014 - 170ms/epoch - 13ms/step
+Epoch 18/100
+13/13 - 0s - loss: 0.0012 - 173ms/epoch - 13ms/step
+Epoch 19/100
+13/13 - 0s - loss: 0.0012 - 171ms/epoch - 13ms/step
+Epoch 20/100
+13/13 - 0s - loss: 0.0012 - 175ms/epoch - 13ms/step
+Epoch 21/100
+13/13 - 0s - loss: 0.0014 - 167ms/epoch - 13ms/step
+Epoch 22/100
+13/13 - 0s - loss: 0.0011 - 165ms/epoch - 13ms/step
+Epoch 23/100
+13/13 - 0s - loss: 0.0011 - 187ms/epoch - 14ms/step
+Epoch 24/100
+13/13 - 0s - loss: 0.0012 - 178ms/epoch - 14ms/step
+Epoch 25/100
+13/13 - 0s - loss: 0.0012 - 183ms/epoch - 14ms/step
+Epoch 26/100
+13/13 - 0s - loss: 0.0012 - 186ms/epoch - 14ms/step
+Epoch 27/100
+13/13 - 0s - loss: 8.7911e-04 - 169ms/epoch - 13ms/step
+Epoch 28/100
+13/13 - 0s - loss: 0.0012 - 169ms/epoch - 13ms/step
+Epoch 29/100
+13/13 - 0s - loss: 0.0011 - 176ms/epoch - 14ms/step
+Epoch 30/100
+13/13 - 0s - loss: 9.3373e-04 - 173ms/epoch - 13ms/step
+Epoch 31/100
+13/13 - 0s - loss: 0.0011 - 182ms/epoch - 14ms/step
+Epoch 32/100
+13/13 - 0s - loss: 0.0014 - 173ms/epoch - 13ms/step
+Epoch 33/100
+13/13 - 0s - loss: 9.0038e-04 - 184ms/epoch - 14ms/step
+Epoch 34/100
+13/13 - 0s - loss: 9.2040e-04 - 165ms/epoch - 13ms/step
+Epoch 35/100
+13/13 - 0s - loss: 8.6147e-04 - 181ms/epoch - 14ms/step
+Epoch 36/100
+13/13 - 0s - loss: 0.0011 - 175ms/epoch - 13ms/step
+Epoch 37/100
+13/13 - 0s - loss: 9.0364e-04 - 176ms/epoch - 14ms/step
+Epoch 38/100
+13/13 - 0s - loss: 9.4926e-04 - 179ms/epoch - 14ms/step
+Epoch 39/100
+13/13 - 0s - loss: 7.7685e-04 - 172ms/epoch - 13ms/step
+Epoch 40/100
+13/13 - 0s - loss: 0.0010 - 171ms/epoch - 13ms/step
+Epoch 41/100
+13/13 - 0s - loss: 0.0011 - 169ms/epoch - 13ms/step
+Epoch 42/100
+13/13 - 0s - loss: 7.6562e-04 - 171ms/epoch - 13ms/step
+Epoch 43/100
+13/13 - 0s - loss: 8.2835e-04 - 171ms/epoch - 13ms/step
+Epoch 44/100
+13/13 - 0s - loss: 0.0011 - 166ms/epoch - 13ms/step
+Epoch 45/100
+13/13 - 0s - loss: 0.0012 - 169ms/epoch - 13ms/step
+Epoch 46/100
+13/13 - 0s - loss: 0.0010 - 178ms/epoch - 14ms/step
+Epoch 47/100
+13/13 - 0s - loss: 0.0011 - 170ms/epoch - 13ms/step
+Epoch 48/100
+13/13 - 0s - loss: 9.5090e-04 - 168ms/epoch - 13ms/step
+Epoch 49/100
+13/13 - 0s - loss: 0.0010 - 171ms/epoch - 13ms/step
+Epoch 50/100
+13/13 - 0s - loss: 9.4823e-04 - 169ms/epoch - 13ms/step
+Epoch 51/100
+13/13 - 0s - loss: 0.0012 - 168ms/epoch - 13ms/step
+Epoch 52/100
+13/13 - 0s - loss: 9.9736e-04 - 170ms/epoch - 13ms/step
+Epoch 53/100
+13/13 - 0s - loss: 0.0010 - 166ms/epoch - 13ms/step
+Epoch 54/100
+13/13 - 0s - loss: 9.4853e-04 - 173ms/epoch - 13ms/step
+Epoch 55/100
+13/13 - 0s - loss: 9.6958e-04 - 169ms/epoch - 13ms/step
+Epoch 56/100
+13/13 - 0s - loss: 0.0012 - 165ms/epoch - 13ms/step
+Epoch 57/100
+13/13 - 0s - loss: 7.5580e-04 - 171ms/epoch - 13ms/step
+Epoch 58/100
+13/13 - 0s - loss: 6.8531e-04 - 169ms/epoch - 13ms/step
+Epoch 59/100
+13/13 - 0s - loss: 8.9007e-04 - 172ms/epoch - 13ms/step
+Epoch 60/100
+13/13 - 0s - loss: 9.7624e-04 - 175ms/epoch - 13ms/step
+Epoch 61/100
+13/13 - 0s - loss: 8.1889e-04 - 170ms/epoch - 13ms/step
+Epoch 62/100
+13/13 - 0s - loss: 0.0011 - 168ms/epoch - 13ms/step
+Epoch 63/100
+13/13 - 0s - loss: 0.0011 - 169ms/epoch - 13ms/step
+Epoch 64/100
+13/13 - 0s - loss: 8.7615e-04 - 175ms/epoch - 13ms/step
+Epoch 65/100
+13/13 - 0s - loss: 8.9730e-04 - 174ms/epoch - 13ms/step
+Epoch 66/100
+13/13 - 0s - loss: 0.0012 - 178ms/epoch - 14ms/step
+Epoch 67/100
+13/13 - 0s - loss: 8.7963e-04 - 169ms/epoch - 13ms/step
+Epoch 68/100
+13/13 - 0s - loss: 8.6781e-04 - 170ms/epoch - 13ms/step
+Epoch 69/100
+13/13 - 0s - loss: 9.8529e-04 - 175ms/epoch - 13ms/step
+Epoch 70/100
+13/13 - 0s - loss: 0.0011 - 174ms/epoch - 13ms/step
+Epoch 71/100
+13/13 - 0s - loss: 7.8532e-04 - 168ms/epoch - 13ms/step
+Epoch 72/100
+13/13 - 0s - loss: 8.9966e-04 - 182ms/epoch - 14ms/step
+Epoch 73/100
+13/13 - 0s - loss: 7.7892e-04 - 170ms/epoch - 13ms/step
+Epoch 74/100
+13/13 - 0s - loss: 8.7138e-04 - 172ms/epoch - 13ms/step
+Epoch 75/100
+13/13 - 0s - loss: 7.8498e-04 - 172ms/epoch - 13ms/step
+Epoch 76/100
+13/13 - 0s - loss: 0.0010 - 178ms/epoch - 14ms/step
+Epoch 77/100
+13/13 - 0s - loss: 0.0010 - 179ms/epoch - 14ms/step
+Epoch 78/100
+13/13 - 0s - loss: 8.1587e-04 - 171ms/epoch - 13ms/step
+Epoch 79/100
+13/13 - 0s - loss: 6.6127e-04 - 170ms/epoch - 13ms/step
+Epoch 80/100
+13/13 - 0s - loss: 8.9856e-04 - 170ms/epoch - 13ms/step
+Epoch 81/100
+13/13 - 0s - loss: 8.6143e-04 - 173ms/epoch - 13ms/step
+Epoch 82/100
+13/13 - 0s - loss: 8.5049e-04 - 171ms/epoch - 13ms/step
+Epoch 83/100
+13/13 - 0s - loss: 0.0010 - 172ms/epoch - 13ms/step
+Epoch 84/100
+13/13 - 0s - loss: 0.0011 - 172ms/epoch - 13ms/step
+Epoch 85/100
+13/13 - 0s - loss: 7.8525e-04 - 175ms/epoch - 13ms/step
+Epoch 86/100
+13/13 - 0s - loss: 9.4037e-04 - 176ms/epoch - 14ms/step
+Epoch 87/100
+13/13 - 0s - loss: 0.0013 - 172ms/epoch - 13ms/step
+Epoch 88/100
+13/13 - 0s - loss: 0.0011 - 169ms/epoch - 13ms/step
+Epoch 89/100
+13/13 - 0s - loss: 0.0011 - 171ms/epoch - 13ms/step
+Epoch 90/100
+13/13 - 0s - loss: 7.6418e-04 - 172ms/epoch - 13ms/step
+Epoch 91/100
+13/13 - 0s - loss: 9.5837e-04 - 170ms/epoch - 13ms/step
+Epoch 92/100
+13/13 - 0s - loss: 9.8483e-04 - 169ms/epoch - 13ms/step
+Epoch 93/100
+13/13 - 0s - loss: 0.0010 - 167ms/epoch - 13ms/step
+Epoch 94/100
+13/13 - 0s - loss: 8.3368e-04 - 174ms/epoch - 13ms/step
+Epoch 95/100
+13/13 - 0s - loss: 9.6200e-04 - 172ms/epoch - 13ms/step
+Epoch 96/100
+13/13 - 0s - loss: 9.5655e-04 - 175ms/epoch - 13ms/step
+Epoch 97/100
+13/13 - 0s - loss: 0.0011 - 170ms/epoch - 13ms/step
+Epoch 98/100
+13/13 - 0s - loss: 0.0010 - 172ms/epoch - 13ms/step
+Epoch 99/100
+13/13 - 0s - loss: 8.0691e-04 - 174ms/epoch - 13ms/step
+Epoch 100/100
+13/13 - 0s - loss: 0.0011 - 172ms/epoch - 13ms/step
+Traceback (most recent call last):
+  File "/gpfs/space/home/muhamm93/caise23/lstm_caise23_concatenated/./dg_training.py", line 88, in <module>
+    main(sys.argv[1:])
+  File "/gpfs/space/home/muhamm93/caise23/lstm_caise23_concatenated/./dg_training.py", line 84, in main
+    tr.ModelTrainer(parameters)
+  File "/gpfs/space/home/muhamm93/caise23/lstm_caise23_concatenated/model_training/model_trainer.py", line 55, in __init__
+    optimizer.execute_trials()
+  File "/gpfs/space/home/muhamm93/caise23/lstm_caise23_concatenated/model_training/model_hpc_optimizer.py", line 101, in execute_trials
+    configs_files = self.export_params()
+  File "/gpfs/space/home/muhamm93/caise23/lstm_caise23_concatenated/model_training/model_hpc_optimizer.py", line 92, in export_params
+    sup.create_json(
+  File "/gpfs/space/home/muhamm93/.conda/envs/lstm-caise23/lib/python3.9/site-packages/utils/support.py", line 110, in create_json
+    f.write(json.dumps(dictionary, indent=4, sort_keys=True))
+  File "/gpfs/space/home/muhamm93/.conda/envs/lstm-caise23/lib/python3.9/json/__init__.py", line 234, in dumps
+    return cls(
+  File "/gpfs/space/home/muhamm93/.conda/envs/lstm-caise23/lib/python3.9/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/gpfs/space/home/muhamm93/.conda/envs/lstm-caise23/lib/python3.9/json/encoder.py", line 431, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/gpfs/space/home/muhamm93/.conda/envs/lstm-caise23/lib/python3.9/json/encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "/gpfs/space/home/muhamm93/.conda/envs/lstm-caise23/lib/python3.9/json/encoder.py", line 353, in _iterencode_dict
+    items = sorted(dct.items())
+TypeError: '<' not supported between instances of 'str' and 'int'
