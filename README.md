@@ -21,7 +21,7 @@ Once created the environment, you can perform each one of the tasks, specifying 
 *Training LSTM for suffix prediction and remaining time:* To perform this task you need to set the required activity (-a) as 'training' followed by the name of the (-f) event log, and all the following parameters:
 
 * Filename (-f): Log filename.
-* Model family (-m): The available options are lstm, gru, lstm_cx and gru_cx.
+* Model family (-m): lstm
 * Max Eval (-e): Maximum number of evaluations.
 * Opt method (-o): Optimization method used. The available options are hpc and bayesian.
 
