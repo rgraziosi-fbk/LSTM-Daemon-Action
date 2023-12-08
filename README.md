@@ -17,7 +17,7 @@ Datasets can be found in the log folder or on the following link:
   ```
 ## Running the script
 
-Once created the environment, you can perform each one of the tasks, specifying the following parameters in the lstm.py module, or by command line as is described below:
+Once created the environment, you can perform training and testing by specifying the following parameters in the lstm.py module, or by command line as is described below:
 
 *Training LSTM for suffix prediction and remaining time:* To perform this task you need to set the required activity (-a) as 'training' followed by the name of the (-f) event log, and all the following parameters:
 
