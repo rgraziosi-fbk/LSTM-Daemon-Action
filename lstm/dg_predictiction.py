@@ -28,11 +28,13 @@ def main(argv):
     column_names = {'Case ID': 'caseid',
                     'Activity': 'task',
                     'lifecycle:transition': 'event_type',
-                    'Resource': 'user'}
+                    'Resource': 'user',
+                    'time:timestamp': 'start_timestamp',
+                    'time:timestamp': 'end_timestamp'}
     parameters['one_timestamp'] = True # Change this if only one timestamp in the log Else False
     parameters['is_single_exec'] = False
     parameters['read_options'] = {
-        'timeformat': '%Y-%m-%dT%H:%M:%S.%f',
+        'timeformat': '%Y-%m-%d %H:%M:%S',
         'column_names': column_names,
         'one_timestamp': parameters['one_timestamp'],
         'filter_d_attrib': False}
@@ -40,12 +42,12 @@ def main(argv):
     if not argv:
         # predict_next, pred_sfx
         parameters['activity'] = 'pred_log'
-        parameters['folder'] = '20230302_3CC0DC8C_5A76_4ED1_8E90_AFB851EB1AA0'
-        parameters['model_file'] = 'Production.h5'
-        parameters['is_single_exec'] = False  # single or batch execution
+        parameters['folder'] = '20241028_BF048ED2_94FE_41B1_BACD_6A82AC262833'
+        parameters['model_file'] = 'sepsis.h5'
+        parameters['is_single_exec'] = True  # single or batch execution
         # variants and repetitions to be tested Random Choice, Arg Max
         parameters['variant'] = 'Random Choice'
-        parameters['rep'] = 1
+        parameters['rep'] = 10
     else:
         # Catch parms by console
         try:

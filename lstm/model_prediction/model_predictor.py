@@ -51,8 +51,9 @@ class ModelPredictor():
     def execute_predictive_task(self):
         # create examples for next event and suffix
         if self.parms['activity'] == 'pred_log':
-            self.parms['num_cases'] = len(self.log.caseid.unique())
-            self.parms['start_time'] = self.log.start_timestamp.min()
+            # self.parms['num_cases'] = len(self.log.caseid.unique())
+            self.parms['num_cases'] = 157
+            self.parms['end_time'] = self.log.end_timestamp.min()
         else:
             feat_mannager = feat.FeaturesMannager(self.parms)
             feat_mannager.register_scaler(self.parms['model_type'],
@@ -67,6 +68,10 @@ class ModelPredictor():
             self.predict_values(run_num)
             # export predictions
             self.export_predictions(run_num)
+
+            # My edit: skip evaluation
+            continue
+
             # assesment
             evaluator = EvaluateTask()
             if self.parms['activity'] == 'pred_log':

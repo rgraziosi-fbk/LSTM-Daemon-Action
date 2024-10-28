@@ -25,21 +25,21 @@ def catch_parameter(opt):
 
 def main(argv):
     parameters = dict()
-    column_names = {'Case_ID': 'caseid',
+    column_names = {'Case ID': 'caseid',
                     'Activity': 'task',
                     'lifecycle:transition': 'event_type',
                     'Resource': 'user',
-                    'Start_Time': 'start_timestamp',
-                    'End_Time': 'end_timestamp'}
+                    'time:timestamp': 'start_timestamp',
+                    'time:timestamp': 'end_timestamp'}
     parameters['one_timestamp'] = True  # Change this if only one timestamp in the log Else False
     parameters['read_options'] = {
-        'timeformat': '%Y-%m-%dT%H:%M:%S.%f',
+        'timeformat': '%Y-%m-%d %H:%M:%S',
         'column_names': column_names,
         'one_timestamp': parameters['one_timestamp']}
     # Parameters settled manually or catched by console for batch operations
     if not argv:
         # Event-log filename
-        parameters['file_name'] = 'Production.csv'
+        parameters['file_name'] = 'sepsis.csv'
         parameters['model_family'] = 'lstm'
         parameters['opt_method'] = 'bayesian'  # 'rand_hpc', 'bayesian'
         parameters['max_eval'] = 1
@@ -63,7 +63,7 @@ def main(argv):
     parameters['batch_size'] = 32  # Usually 32/64/128/256
     parameters['norm_method'] = ['max', 'lognorm']
     parameters['imp'] = 2
-    parameters['epochs'] = 100
+    parameters['epochs'] = 10
     parameters['n_size'] = [5, 10, 15,20,25,30,35,40,45,50]
     parameters['l_size'] = [50,100,150,200,250]
     parameters['lstm_act'] = ['selu', 'tanh','relu', 'sigmoid','linear','softmax']

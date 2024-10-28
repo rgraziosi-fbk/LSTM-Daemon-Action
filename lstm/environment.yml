@@ -3,6 +3,7 @@ channels:
   - defaults
 dependencies:
   - spyder==5.1.5
+  - scipy==1.11.4
   - pandas
   - lxml
   - matplotlib
@@ -12,8 +13,10 @@ dependencies:
   - pip:
     - hyperopt
     - jellyfish
-    - keras
+    - keras==2.15.0
     - pm4py
-    - tensorflow
+    - tensorflow==2.15.0
     - opyenxes
     - git+http://github.com/Mcamargo85/support_modules.git
+    - swifter==1.4.0
+    - minineedle==3.1.5

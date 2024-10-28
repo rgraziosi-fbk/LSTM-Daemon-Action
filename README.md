@@ -15,6 +15,25 @@ Datasets can be found in the log folder or on the following link:
   conda env create -f environment.yml
   conda activate lstm-caise23
   ```
+
+## My running instructions
+
+### Training
+
+- In dg_training.py adjust parameters to your needs. In particular: column_names, timeformat, file_name
+- Run `cd lstm`
+- Run `python dg_training.py`
+
+Training generates two folder: only the one containing the model_parameters.json file is really useful and should be referenced in the log generation step; the other folder can be deleted.
+
+### Log generation
+
+- In dg_prediction.py choose 'folder', 'model_file' and 'rep' parameters. 'rep' indicates how many logs to generate.
+- In event_log_predictor.py:265 choose the h5 model path
+- In model_predictor.py:55 choose the number of traces to generate
+- Run `python dg_predictiction.py`
+
+
 ## Running the script
 
 Once created the environment, you can perform training and testing by running the following python scripts dg_training.py  and dg_predictiction.py  through command line as  described below:

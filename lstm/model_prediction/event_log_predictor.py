@@ -217,7 +217,7 @@ class EventLogPredictor():
                                                          parms['scale_args'],
                                                          parms['norm_method'])
                         if i == 0:
-                            now = parms['start_time']
+                            now = parms['end_time']
                             time = now
                         else:
                             time = (log_trace[i-1]['end_timestamp'] +
@@ -261,6 +261,9 @@ class EventLogPredictor():
                 rep (int): repetition number
             """
             try:
+                # My edit: specify here the path to the h5 model
+                model_path = '/Users/riccardo/Documents/pdi/topics/data-augmentation/dev/lstm-daemon-action/lstm/output_files/20241028_BF048ED2_94FE_41B1_BACD_6A82AC262833/sepsis.h5'
+
                 model = load_model(model_path)
                 generated_event_log = list()
                 for case in cases:
@@ -305,6 +308,7 @@ class EventLogPredictor():
                         else:
                             if parms['one_timestamp']:
                                 x_trace.append([pos, pos1, predictions[2][0][0]])
+                                pre_times = [[0.0]]
                             else:
                                 pred_dur = (predictions[2][0][0] 
                                             if predictions[2][0][0]>=0 else 0) 
