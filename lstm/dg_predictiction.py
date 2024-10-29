@@ -42,11 +42,11 @@ def main(argv):
     if not argv:
         # predict_next, pred_sfx
         parameters['activity'] = 'pred_log'
-        parameters['folder'] = '20241028_BF048ED2_94FE_41B1_BACD_6A82AC262833'
+        parameters['folder'] = '20241029_EB6917ED_690B_4C81_A70F_0643E29502E3'
         parameters['model_file'] = 'sepsis.h5'
         parameters['is_single_exec'] = True  # single or batch execution
         # variants and repetitions to be tested Random Choice, Arg Max
-        parameters['variant'] = 'Random Choice'
+        parameters['variant'] = 'Random Choice' # use random choice sampling to select next activity
         parameters['rep'] = 10
     else:
         # Catch parms by console

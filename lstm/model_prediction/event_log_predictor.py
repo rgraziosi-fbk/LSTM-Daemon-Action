@@ -4,6 +4,7 @@ Created on Wed Mar 18 17:11:17 2020
 
 @author: Manuel Camargo
 """
+import os
 import numpy as np
 import math
 from tqdm import tqdm
@@ -261,8 +262,8 @@ class EventLogPredictor():
                 rep (int): repetition number
             """
             try:
-                # My edit: specify here the path to the h5 model
-                model_path = '/Users/riccardo/Documents/pdi/topics/data-augmentation/dev/lstm-daemon-action/lstm/output_files/20241028_BF048ED2_94FE_41B1_BACD_6A82AC262833/sepsis.h5'
+                # My edit: specify model path
+                model_path = os.path.join('output_files', parms['folder'], parms['model_file'])
 
                 model = load_model(model_path)
                 generated_event_log = list()

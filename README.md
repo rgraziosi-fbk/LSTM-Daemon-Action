@@ -24,15 +24,20 @@ Datasets can be found in the log folder or on the following link:
 - Run `cd lstm`
 - Run `python dg_training.py`
 
-Training generates two folder: only the one containing the model_parameters.json file is really useful and should be referenced in the log generation step; the other folder can be deleted.
+Training generates two folders with two different names:
+
+- One contains subfolders, one for each hyperparam space search + a csv with the results for each train
+- The other one contains a "parameters" folder + a .h5 model (which is the best model across all trials)
+
+This latter folder must be passed for log generation as 'folder' parameter in the next step.
 
 ### Log generation
 
 - In dg_prediction.py choose 'folder', 'model_file' and 'rep' parameters. 'rep' indicates how many logs to generate.
-- In event_log_predictor.py:265 choose the h5 model path
 - In model_predictor.py:55 choose the number of traces to generate
 - Run `python dg_predictiction.py`
 
+Generated logs will go to the specified 'folder'.
 
 ## Running the script
 

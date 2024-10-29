@@ -42,7 +42,7 @@ def main(argv):
         parameters['file_name'] = 'sepsis.csv'
         parameters['model_family'] = 'lstm'
         parameters['opt_method'] = 'bayesian'  # 'rand_hpc', 'bayesian'
-        parameters['max_eval'] = 1
+        parameters['max_eval'] = 50 # number of hyperparameter choices to try
     else:
         # Catch parms by console
         try:
@@ -63,7 +63,7 @@ def main(argv):
     parameters['batch_size'] = 32  # Usually 32/64/128/256
     parameters['norm_method'] = ['max', 'lognorm']
     parameters['imp'] = 2
-    parameters['epochs'] = 10
+    parameters['epochs'] = 100
     parameters['n_size'] = [5, 10, 15,20,25,30,35,40,45,50]
     parameters['l_size'] = [50,100,150,200,250]
     parameters['lstm_act'] = ['selu', 'tanh','relu', 'sigmoid','linear','softmax']
