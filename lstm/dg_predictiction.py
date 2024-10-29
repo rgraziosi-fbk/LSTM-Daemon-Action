@@ -5,6 +5,7 @@ Created on Tue Feb 23 19:08:25 2021
 @author: Manuel Camargo
 """
 import os
+import time
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 import sys
@@ -66,7 +67,13 @@ def main(argv):
     print(parameters['folder'])
     print(parameters['model_file'])
 
+    start_time = time.time()
+
     pr.ModelPredictor(parameters)
+
+    end_time = time.time()
+
+    print(f'Generation time (for {parameters["rep"]} log generations): {end_time - start_time} seconds.')
 
 
 if __name__ == "__main__":

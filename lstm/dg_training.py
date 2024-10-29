@@ -5,6 +5,7 @@ Created on Fri Jun 26 13:27:58 2020
 @author: Manuel Camargo
 """
 import os
+import time
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 import sys
@@ -76,8 +77,15 @@ def main(argv):
     if parameters['model_type'] == 'simple_gan':
         parameters['gan_pretrain'] = False
     parameters.pop('model_family', None)
+
+    start_time = time.time()
+
     # Train models
     tr.ModelTrainer(parameters)
+
+    end_time = time.time()
+
+    print(f'Training time (for {parameters["max_eval"]} configurations, {parameters["epochs"]} epochs each): {end_time - start_time} seconds.')
 
 
 if __name__ == "__main__":
