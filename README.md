@@ -20,6 +20,7 @@ Datasets can be found in the log folder or on the following link:
 
 ### Training
 
+- If present, remove the folder lstm/input_files/embedded_matix. It will be generated again when you launch training
 - In dg_training.py adjust parameters to your needs. In particular: column_names, timeformat, file_name
 - Run `cd lstm`
 - Run `python dg_training.py`
