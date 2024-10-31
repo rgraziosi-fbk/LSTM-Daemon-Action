@@ -25,6 +25,8 @@ Datasets can be found in the log folder or on the following link:
 - Run `cd lstm`
 - Run `python dg_training.py`
 
+If you get error: KeyError: 9, remove embedded_matix folder and try training again.
+
 Training generates two folders with two different names:
 
 - One contains subfolders, one for each hyperparam space search + a csv with the results for each train
@@ -34,7 +36,7 @@ This latter folder must be passed for log generation as 'folder' parameter in th
 
 ### Log generation
 
-- In `dg_prediction.py` choose `folder`, `model_file` and `num_cases` parameters. folder is the name of the folder which contains the "parameters" folder + the best .h5 model.
+- In `dg_prediction.py` choose `DATASET`, `folder`, `model_file` and `num_cases` parameters. folder is the name of the folder which contains the "parameters" folder + the best .h5 model.
 - Run `python dg_predictiction.py`
 
 Generated logs will go to the specified 'folder'.

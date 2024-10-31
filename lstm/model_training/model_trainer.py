@@ -96,8 +96,12 @@ class ModelTrainer():
         # Filter by label, if provided
         if params['filter_by_label'] is not None:
             self.log = self.log[self.log['label'] == params['filter_by_label']]
+            self.log_train = self.log_train[self.log_train['label'] == params['filter_by_label']]
+            self.log_test = self.log_test[self.log_test['label'] == params['filter_by_label']]
 
         print(f'Log num_cases after filter {params["filter_by_label"]} = {len(self.log["caseid"].unique().tolist())}')
+        print(f'Train num_cases = {len(self.log_train["caseid"].unique().tolist())}')
+        print(f'Test num_cases = {len(self.log_test["caseid"].unique().tolist())}')
 
         self.log = feat.add_resources(self.log, params['rp_sim'])
         # indexes creation
