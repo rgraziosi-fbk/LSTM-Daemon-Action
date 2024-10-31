@@ -21,7 +21,7 @@ Datasets can be found in the log folder or on the following link:
 ### Training
 
 - If present, remove the folder lstm/input_files/embedded_matix. It will be generated again when you launch training
-- In dg_training.py adjust parameters to your needs. In particular: column_names, timeformat, file_name. max_eval is number of hyperparameter configurations to try
+- In `dg_training.py` set `DATASET` and `parameters['filter_by_label']`. filter_by_label must be set to None for lstm_1; to 'deviant' and 'regular' for lstm_2
 - Run `cd lstm`
 - Run `python dg_training.py`
 
@@ -34,7 +34,7 @@ This latter folder must be passed for log generation as 'folder' parameter in th
 
 ### Log generation
 
-- In dg_prediction.py choose 'folder', 'model_file', 'rep' and 'num_cases' parameters. 'rep' indicates how many logs to generate, 'num_cases' how many cases for each log to generate. 'folder is the name of the folder which contains the "parameters" folder + the best .h5 model.
+- In `dg_prediction.py` choose `folder`, `model_file` and `num_cases` parameters. folder is the name of the folder which contains the "parameters" folder + the best .h5 model.
 - Run `python dg_predictiction.py`
 
 Generated logs will go to the specified 'folder'.

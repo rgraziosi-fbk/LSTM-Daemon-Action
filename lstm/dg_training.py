@@ -25,6 +25,17 @@ def catch_parameter(opt):
 
 
 def main(argv):
+    DATASET = 'sepsis'
+
+    if DATASET == 'sepsis':
+        timeformat = '%Y-%m-%d %H:%M:%S'
+    elif DATASET in ['bpic2012_a', 'bpic2012_b']:
+        timeformat = '%Y-%m-%d %H:%M:%S.%f'
+    elif DATASET == 'traffic_fines':
+        timeformat = '%Y-%m-%d'
+    else:
+        assert False
+
     parameters = dict()
     column_names = {'Case ID': 'caseid',
                     'Activity': 'task',
@@ -34,13 +45,13 @@ def main(argv):
                     'time:timestamp': 'end_timestamp'}
     parameters['one_timestamp'] = True  # Change this if only one timestamp in the log Else False
     parameters['read_options'] = {
-        'timeformat': '%Y-%m-%d %H:%M:%S',
+        'timeformat': timeformat,
         'column_names': column_names,
         'one_timestamp': parameters['one_timestamp']}
     # Parameters settled manually or catched by console for batch operations
     if not argv:
         # Event-log filename
-        parameters['file_name'] = 'sepsis.csv'
+        parameters['file_name'] = f'{DATASET}.csv'
         parameters['model_family'] = 'lstm'
         parameters['opt_method'] = 'bayesian'  # 'rand_hpc', 'bayesian'
         parameters['max_eval'] = 10 # number of hyperparameter choices to try

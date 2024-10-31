@@ -25,6 +25,17 @@ def catch_parameter(opt):
 
 
 def main(argv):
+    DATASET = 'sepsis'
+
+    if DATASET == 'sepsis':
+        timeformat = '%Y-%m-%d %H:%M:%S'
+    elif DATASET in ['bpic2012_a', 'bpic2012_b']:
+        timeformat = '%Y-%m-%d %H:%M:%S.%f'
+    elif DATASET == 'traffic_fines':
+        timeformat = '%Y-%m-%d'
+    else:
+        assert False
+
     parameters = dict()
     column_names = {'Case ID': 'caseid',
                     'Activity': 'task',
@@ -35,7 +46,7 @@ def main(argv):
     parameters['one_timestamp'] = True # Change this if only one timestamp in the log Else False
     parameters['is_single_exec'] = False
     parameters['read_options'] = {
-        'timeformat': '%Y-%m-%d %H:%M:%S',
+        'timeformat': timeformat,
         'column_names': column_names,
         'one_timestamp': parameters['one_timestamp'],
         'filter_d_attrib': False}
@@ -43,11 +54,11 @@ def main(argv):
     if not argv:
         # predict_next, pred_sfx
         parameters['activity'] = 'pred_log'
-        parameters['folder'] = '20241031_94678FB1_070E_4AF6_A05F_7362988138D8'
-        parameters['model_file'] = 'sepsis.h5'
         parameters['is_single_exec'] = True  # single or batch execution
         # variants and repetitions to be tested Random Choice, Arg Max
         parameters['variant'] = 'Random Choice' # use random choice sampling to select next activity
+        parameters['folder'] = '20241031_94678FB1_070E_4AF6_A05F_7362988138D8'
+        parameters['model_file'] = 'sepsis.h5'
         parameters['rep'] = 10
         parameters['num_cases'] = 23
     else:
