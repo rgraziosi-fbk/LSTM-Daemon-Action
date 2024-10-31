@@ -34,8 +34,7 @@ This latter folder must be passed for log generation as 'folder' parameter in th
 
 ### Log generation
 
-- In dg_prediction.py choose 'folder', 'model_file' and 'rep' parameters. 'rep' indicates how many logs to generate.
-- In model_predictor.py:55 choose the number of traces to generate
+- In dg_prediction.py choose 'folder', 'model_file', 'rep' and 'num_cases' parameters. 'rep' indicates how many logs to generate, 'num_cases' how many cases for each log to generate. 'folder is the name of the folder which contains the "parameters" folder + the best .h5 model.
 - Run `python dg_predictiction.py`
 
 Generated logs will go to the specified 'folder'.

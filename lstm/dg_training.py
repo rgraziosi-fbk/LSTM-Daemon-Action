@@ -43,7 +43,7 @@ def main(argv):
         parameters['file_name'] = 'sepsis.csv'
         parameters['model_family'] = 'lstm'
         parameters['opt_method'] = 'bayesian'  # 'rand_hpc', 'bayesian'
-        parameters['max_eval'] = 50 # number of hyperparameter choices to try
+        parameters['max_eval'] = 10 # number of hyperparameter choices to try
     else:
         # Catch parms by console
         try:
@@ -77,6 +77,9 @@ def main(argv):
     if parameters['model_type'] == 'simple_gan':
         parameters['gan_pretrain'] = False
     parameters.pop('model_family', None)
+
+    # Whether to filter or not by label ('deviant', 'regular' or None are possible values)
+    parameters['filter_by_label'] = 'deviant'
 
     start_time = time.time()
 

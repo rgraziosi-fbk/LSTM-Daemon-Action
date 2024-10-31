@@ -88,11 +88,20 @@ class ModelTrainer():
 
 
     def preprocess(self, params):
+        print(f'Log num_cases before filter = {len(self.log["caseid"].unique().tolist())}')
+
+        # split validation
+        self.split_timeline(0.8, params['one_timestamp'])
+
+        # Filter by label, if provided
+        if params['filter_by_label'] is not None:
+            self.log = self.log[self.log['label'] == params['filter_by_label']]
+
+        print(f'Log num_cases after filter {params["filter_by_label"]} = {len(self.log["caseid"].unique().tolist())}')
+
         self.log = feat.add_resources(self.log, params['rp_sim'])
         # indexes creation
         self.indexing()
-        # split validation
-        self.split_timeline(0.8, params['one_timestamp'])
         # Load embedded matrix
         ac_emb_name = 'ac_' + params['file_name'].split('.')[0]+'.emb'
         rl_emb_name = 'rl_' + params['file_name'].split('.')[0]+'.emb'
