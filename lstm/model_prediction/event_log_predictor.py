@@ -57,7 +57,7 @@ class EventLogPredictor():
             p.wait()
             pbar.close()
 
-        cpu_count = multiprocessing.cpu_count()
+        cpu_count = 1
         num_digits = len(str(parms['num_cases']))
         cases = ['Case'+str(num).zfill(num_digits) 
                  for num in range(0, parms['num_cases'])]
@@ -166,6 +166,9 @@ class EventLogPredictor():
         return gen(*args)
 
     def _generate_traces_parallel(self, parms, vectorizer):
+        if multiprocessing.get_start_method(allow_none=True) != 'spawn':
+            multiprocessing.set_start_method('spawn', force=True)
+
         def pbar_async(p, msg):
             pbar = tqdm(total=reps, desc=msg)
             processed = 0
@@ -180,7 +183,7 @@ class EventLogPredictor():
             p.wait()
             pbar.close()
 
-        cpu_count = multiprocessing.cpu_count()
+        cpu_count = 1
         num_digits = len(str(parms['num_cases']))
         cases = ['Case'+str(num).zfill(num_digits)
                  for num in range(0, parms['num_cases'])]
