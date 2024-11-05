@@ -170,7 +170,7 @@ class ModelTrainer():
         """
         # Split log data
         splitter = ls.LogSplitter(self.log)
-        train, test = splitter.split_log('timeline_contained', size, one_ts)
+        train, test = splitter.split_log('timeline_trace', size, one_ts)
         total_events = len(self.log)
         # Check size and change time splitting method if necesary
         if len(test) < int(total_events*0.1):

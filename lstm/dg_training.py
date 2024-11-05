@@ -25,7 +25,10 @@ def catch_parameter(opt):
 
 
 def main(argv):
-    DATASET = 'sepsis'
+    DATASET = 'bpic2012_a'
+    
+    # Whether to filter or not by label ('deviant', 'regular' or None are possible values)
+    parameters['filter_by_label'] = None
 
     if DATASET == 'sepsis':
         timeformat = '%Y-%m-%d %H:%M:%S'
@@ -88,9 +91,6 @@ def main(argv):
     if parameters['model_type'] == 'simple_gan':
         parameters['gan_pretrain'] = False
     parameters.pop('model_family', None)
-
-    # Whether to filter or not by label ('deviant', 'regular' or None are possible values)
-    parameters['filter_by_label'] = 'deviant'
 
     start_time = time.time()
 

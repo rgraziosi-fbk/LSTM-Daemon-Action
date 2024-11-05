@@ -280,7 +280,7 @@ class ModelOptimizer():
         """
         # Split log data
         splitter = ls.LogSplitter(log)
-        train, valdn = splitter.split_log('timeline_contained', size, one_ts)
+        train, valdn = splitter.split_log('timeline_trace', size, one_ts)
         total_events = len(log)
         # Check size and change time splitting method if necesary
         if len(valdn) < int(total_events*0.1):
