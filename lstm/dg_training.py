@@ -25,7 +25,10 @@ def catch_parameter(opt):
 
 
 def main(argv):
-    DATASET = 'bpic2012_a'
+    parameters = dict()
+
+    # Dataset
+    DATASET = 'sepsis'
     
     # Whether to filter or not by label ('deviant', 'regular' or None are possible values)
     parameters['filter_by_label'] = None
@@ -39,7 +42,6 @@ def main(argv):
     else:
         assert False
 
-    parameters = dict()
     column_names = {'Case ID': 'caseid',
                     'Activity': 'task',
                     'lifecycle:transition': 'event_type',
